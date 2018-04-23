@@ -36,6 +36,7 @@ var app = {
         app.receivedEvent('deviceready');
     		$('#scanBarcode').click(function(evt)
     		{
+          alert('click scan');
           cordova.plugins.barcodeScanner.scan(
             function (result) {
                 alert("We got a barcode\n" +
