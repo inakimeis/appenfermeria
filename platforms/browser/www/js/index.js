@@ -34,19 +34,22 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        function printOnArea(str)
+        {
+          $('#resultArea').text(str);
+        }
     		$('#scanBarcode').click(function(evt)
     		{
           alert('click scan');
           cordova.plugins.barcodeScanner.scan(
             function (result) {
-              console.log(result);
-                alert("We got a barcode\n" +
-                      "Result: " + result.text + "\n" +
-                      "Format: " + result.format + "\n" +
-                      "Cancelled: " + result.cancelled);
+              printOnArea("We got a barcode\n" +
+                    "Result: " + result.text + "\n" +
+                    "Format: " + result.format + "\n" +
+                    "Cancelled: " + result.cancelled);
             },
             function (error) {
-                alert("Scanning failed: " + error);
+                  printOnArea("Scanning failed: " + error);
             },
             {
                 preferFrontCamera : true, // iOS and Android
