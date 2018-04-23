@@ -43,9 +43,9 @@ var app = {
           printOnArea('click boton')
           cordova.plugins.barcodeScanner.scan(
             function (result) {
-              printOnArea("We got a barcode\n" +
-                    "Result: " + result.text + "\n" +
-                    "Format: " + result.format + "\n" +
+              printOnArea("We got a barcode"+
+                    "Result: " + result.text +  
+                    "Format: " + result.format +
                     "Cancelled: " + result.cancelled);
             },
             function (error) {
