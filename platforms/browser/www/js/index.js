@@ -40,7 +40,7 @@ var app = {
         }
     		$('#scanBarcode').click(function(evt)
     		{
-          alert('click scan');
+          printOnArea('click boton')
           cordova.plugins.barcodeScanner.scan(
             function (result) {
               printOnArea("We got a barcode\n" +
